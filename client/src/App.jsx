@@ -24,7 +24,7 @@ function App() {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch('http://localhost:3000/api/stocks/list');
+      const response = await fetch('https://stockanalyzer-mpap.onrender.com/api/stocks/list');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -46,7 +46,7 @@ function App() {
     setIsLoading(true);
     setError(null);
     try {
-      const url = new URL(`http://localhost:3000/api/stocks/analysis/${symbol}`);
+      const url = new URL(`https://stockanalyzer-mpap.onrender.com/api/stocks/analysis/${symbol}`);
       url.searchParams.append('startDate', dateRange.start?.toISOString() || '');
       url.searchParams.append('endDate', dateRange.end?.toISOString() || '');
       url.searchParams.append('maPeriod', maPeriod.toString());
@@ -73,7 +73,7 @@ function App() {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch(`http://localhost:3000/api/stocks/compare?symbols=${symbols.join(',')}`);
+      const response = await fetch(`https://stockanalyzer-mpap.onrender.com/api/stocks/compare?symbols=${symbols.join(',')}`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
