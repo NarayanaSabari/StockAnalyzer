@@ -133,7 +133,7 @@ function App() {
   };
 
   if (isLoading) {
-    return <div className="flex justify-center items-center h-screen">Loading...</div>;
+    return <div className="flex justify-center items-center h-screen">Backend Is loading, please wait...</div>;
   }
 
   if (error) {
